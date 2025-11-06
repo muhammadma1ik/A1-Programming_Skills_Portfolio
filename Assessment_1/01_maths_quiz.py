@@ -6,14 +6,6 @@ import tkinter as tk
 from tkinter import messagebox
 from typing import Tuple
 
-# =============================================================================
-# Configuration and global constants
-# -----------------------------------------------------------------------------
-# DIFFICULTY_BOUNDS maps an integer level to (label, lower_bound, upper_bound).
-# Bounds constrain the random operands and thus control task complexity.
-# TOTAL_QUESTIONS and point weights define the assessment scheme.
-# Color constants centralize the GUI theme (single source of truth).
-# =============================================================================
 DIFFICULTY_BOUNDS = {1: ("Easy", 1, 9), 2: ("Moderate", 10, 99), 3: ("Advanced", 1000, 9999)}
 TOTAL_QUESTIONS = 10
 PTS_FIRST, PTS_SECOND = 10, 5
@@ -50,8 +42,7 @@ def compute(a: int, op: str, b: int) -> int:
 # =============================================================================
 # Required interface functions 
 # -----------------------------------------------------------------------------
-# These functions separate UI orchestration from core logic, aiding testability
-# and meeting any external “required function” contract.
+# These functions separate UI orchestration from core logic
 # =============================================================================
 def displayMenu(app: "QuizApp") -> None:
     """Show the difficulty menu frame at the start of each play."""
